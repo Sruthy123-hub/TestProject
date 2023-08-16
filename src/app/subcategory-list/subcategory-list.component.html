@@ -1,0 +1,13 @@
+<div *ngIf="selectedCategory">
+    <h2>{{ selectedCategory }}</h2>
+    <div *ngFor="let category of subcategories">
+      <div *ngIf="category.category === selectedCategory">
+        <div *ngFor="let subcategory of category.subcategory">
+          <!-- Show the subcategory only if its role is present in the allowedRoles array -->
+          <div *ngIf="allowedRoles.includes(subcategory.role)">
+            {{ subcategory.label }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
